@@ -14,6 +14,14 @@ function askName () {
 }
 
 function points(rangeWidth){
-    let numOfPoints = rangeWidth - 2;
+    let numOfPoints = 0;
     document.getElementById('userpoints').innerHTML = numOfPoints
+    console.log(numOfPoints)
 }
+
+
+
+const score = document.querySelector('.btn')
+score.addEventListener("click", points)
+
+

@@ -11,7 +11,15 @@
 </head>
 <body onload="askName()">
     <h1>Number Guessing Game</h1>
-    <h2>Welcome <h2 id="userpara">Stranger!</h2></h2>
-    <button id="userpoints" >99</button>
+    <div class="userdata">
+        <h3>Welcome <h2 id="userpara">Stranger!</h2></h3>
+        <p class="btn" >You have: <span id="userpoints"></span> Points</p>
+    </div>
+    <div class="game-body">
+        <p> Guess the Number?</p>
+        <input type="number" placeholder="?" class="user-guess"/>
+        <p>Hint: <span id="guess-range"></span></p>
+    </div>
+    
 </body>
 </html>
