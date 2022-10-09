@@ -1,45 +1,65 @@
-let guessRange = [1,2];
+let guessRange = [1, 2];
 let numOfPoints = 0;
+let inPlay = false;
+let stageNum = 0;
+let userGuess = document.getElementById("userguess").value;
 
-let start = false; // to control html body, the conditional rendering of the start button or the game page
+
+// to control html body, the conditional rendering of the start button or the game page
 //k = the correct guess, K-index = the position of the correct guess on the array.
-function askName () {
-    let username = sessionStorage.getItem('username');
+function askName() {
+  let username = sessionStorage.getItem("username");
+  if (username === null) {
+    username = prompt("Enter your name: ");
+  }
+  if (username != null) {
+    document.getElementById("userpara").innerHTML = username;
+    sessionStorage.setItem("username", username);
+  }
+  console.log(username);
+}
 
-    if(username === null){
-        username = prompt('Enter your name: ');
-    }
-    
-    if(username != null){
-        document.getElementById('userpara').innerHTML = username;
-        sessionStorage.setItem('username', username)
-    }
+function hint() {
+  document.getElementById("guessrange").innerHTML = `${guessRange[0]} and ${
+    guessRange[guessRange.length - 1]
+  }`;
+}
+function winOrLose(points, stage, isGameOn) {
+  let winDisplay = document.getElementById("winDisplay");
+  isGameOn
+    ? (winDisplay.innerHTML = `Correct!, you now have x ${points}, move to stage ${stage}`)
+    : (winDisplay.innerHTML = `Wrong!, you have x points, Try Again?`);
+}
 
-    console.log(username)
+function guessCheck(x) {
+    x.preventDefault()
+    console.log(x.target)
+    return
+  let kIndex = Math.floor(Math.random() * guessRange.length);
+  let k = guessRange[kIndex];
+
+  if (k == userGuess) {
+    numOfPoints++;
+    document.getElementById("userpoints").innerHTML = numOfPoints;
+
+    stageNum++;
+    document.getElementById("userstage").innerHTML = stageNum;
+
+    guessRange.push(guessRange[guessRange.length - 1] + 1);
+    inPlay = true;
+  } else {
+    inPlay = false;
+  }
+
+  hint()
+  winOrLose(numOfPoints, stageNum, inPlay);
+}
+
+function checker(e){
+    e.preventDefault()
+    console.log('this makes stuff easier')
 }
 
 
 
-function points(rangeWidth){
-    document.getElementById('userpoints').innerHTML = numOfPoints
-    // console.log(numOfPoints)
-    // console.log(Math.floor(Math.random() * guessRange.length ))
-    guessRange.push(guessRange[guessRange.length - 1] + 1)
-    let kIndex = Math.floor(Math.random() * guessRange.length)
-    let k = guessRange[kIndex]
-
-    let userGuess = document.getElementById('userguess').value;//listen for onKyPress to know when user has guess
-    console.log(guessRange)
-    console.log(k)
-    console.log(userGuess == k)
-}
-
-
-
-const score = document.querySelector('.btn')
-document.getElementById('guessrange').innerHTML =  `${guessRange[0]} ${guessRange[guessRange.length - 1]}`
-
-window.addEventListener("click", points)
-// console.log(guessRange)
-
-
+//listen for user guess submiition to trigger guesscheck() with userguess value

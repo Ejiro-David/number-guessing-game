@@ -12,15 +12,17 @@
     <h1>Number Guessing Game</h1>
     <div class="userdata">
         <h3>Welcome <h2 id="userpara">Stranger!</h2></h3>
-        <p class="btn" >You have: <span id="userpoints"></span> Points</p>
+        <p>You have: <span id="userpoints">0</span> Points</p>
+        <p>You are on stage: <span id="userstage">0</span></p>
     </div>
     <div class="game-body">
         <p> Guess the Number?</p>
-        <form>
+        <p id="winDisplay"></p>
+        <form action="" onsubmit="guessCheck(event)">
             <input type="number" placeholder="?" class="userguess" id="userguess" />
-            <button>check</button>
+            <input type="submit"  value="submit" id="submitguess">check</input>
         </form>
-        <p>Hint: <span id="guessrange"></span></p>
+        <p>Hint: The range is between <span id="guessrange"></span></p>
     </div>
     
 </body>
