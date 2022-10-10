@@ -2,11 +2,10 @@ let guessRange = [1, 2];
 let numOfPoints = 0;
 let inPlay = false;
 let stageNum = 0;
-let form = document.querySelector('form')
-
+let form = document.getElementById("form");
 
 // to control html body, the conditional rendering of the start button or the game page
-//k = the correct guess, K-index = the position of the correct guess on the array.
+// k = the correct guess, K-index = the position of the correct guess on the array.
 function askName() {
   let username = sessionStorage.getItem("username");
   if (username === null) {
@@ -31,10 +30,9 @@ function winOrLose(points, stage, isGameOn) {
     : (winDisplay.innerHTML = `Wrong!, you have x points, Try Again?`);
 }
 
-function guessCheck(event) {
-    // event.preventDefault();
-    let userGuess = document.getElementById("userguess").value;
-    console.log("userGuess")
+const guessCheck = () => {
+
+    console.log()
     return
   let kIndex = Math.floor(Math.random() * guessRange.length);
   let k = guessRange[kIndex];
@@ -56,6 +54,13 @@ function guessCheck(event) {
   winOrLose(numOfPoints, stageNum, inPlay);
 }
 
+function handleSubmit() {
+  let userInput = document.getElementById("userInput").value;
+  console.log(userInput);
+  document.getElementById("userInput").innerHTML = ''
+}
+
+form.addEventListener('submit', handleSubmit)
 // function checker(e){
 //     console.log('this makes stuff easier')
 // }
