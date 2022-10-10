@@ -33,8 +33,7 @@ function winOrLose(points, stage, isGameOn) {
 
 function guessCheck(e) {
     e.preventDefault();
-    
-    console.log(e.target)
+    console.log(userGuess)
     return
   let kIndex = Math.floor(Math.random() * guessRange.length);
   let k = guessRange[kIndex];
@@ -57,10 +56,9 @@ function guessCheck(e) {
 }
 
 function checker(e){
-   
     console.log('this makes stuff easier')
 }
-
+form.
 
 // Make form submission work, then work on start, win and loose displays
 //listen for user guess submiition to trigger guesscheck() with userguess value
