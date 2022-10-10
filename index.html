@@ -18,7 +18,7 @@
     <div class="game-body">
         <p> Guess the Number?</p>
         <p id="winDisplay"></p>
-        <form action=""">
+        <form action="" onsubmit="guessCheck(e)" id="guessform">
             <input type="number" placeholder="?" class="userguess" id="userguess" />
             <input type="submit"  value="submit" id="submitguess"></input>
         </form>
