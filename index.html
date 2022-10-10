@@ -8,21 +8,21 @@
 
  
 </head>
-<body onload="askName()">
+<body onload="askName();   hint();">
     <h1>Number Guessing Game</h1>
     <div class="userdata">
         <h3>Welcome <h2 id="userpara">Stranger!</h2></h3>
-        <p>You have: <span id="userpoints">0</span> Points</p>
-        <p>You are on stage: <span id="userstage">0</span></p>
+        <p>You have <span id="userpoints">0</span> Point(s)</p>
+        <p>Stage <span id="userstage">1</span></p>
     </div>
     <div class="game-body">
         <p> Guess the Number?</p>
         <p id="winDisplay"></p>
-        <form id="form" onsubmit="return false" >
+        <form id="form" onsubmit=" return false;" >
             <input type="number" id="userInput" >
             <input type="submit" value="check">
         </form>
-        <p>Hint: The range is between <span id="guessrange"></span></p>
+        <p>Hint: The range is <span id="guessrange"></span></p>
     </div>
     
 </body>

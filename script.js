@@ -1,7 +1,7 @@
 let guessRange = [1, 2];
 let numOfPoints = 0;
 let inPlay = false;
-let stageNum = 0;
+let stageNum = 1;
 let form = document.getElementById("form");
 
 // to control html body, the conditional rendering of the start button or the game page
@@ -19,25 +19,23 @@ function askName() {
 }
 
 function hint() {
-  document.getElementById("guessrange").innerHTML = `${guessRange[0]} and ${
+  document.getElementById("guessrange").innerHTML = `${guessRange[0]} thru ${
     guessRange[guessRange.length - 1]
   }`;
 }
 function winOrLose(points, stage, isGameOn) {
   let winDisplay = document.getElementById("winDisplay");
   isGameOn
-    ? (winDisplay.innerHTML = `Correct!, you now have x ${points}, move to stage ${stage}`)
-    : (winDisplay.innerHTML = `Wrong!, you have x points, Try Again?`);
+    ? (winDisplay.innerHTML = `Correct!, you now have ${points} points, move to stage ${stage}`)
+    : (winDisplay.innerHTML = `Wrong!, Try Again?`);
 }
 
 const guessCheck = () => {
-
-    console.log()
-    return
+  let userInput = document.getElementById("userInput").value;
   let kIndex = Math.floor(Math.random() * guessRange.length);
   let k = guessRange[kIndex];
-
-  if (k == userGuess) {
+  console.log('k is ', k, 'and user guessed ', userInput )
+  if (userInput != null && k == Number(userInput)) {
     numOfPoints++;
     document.getElementById("userpoints").innerHTML = numOfPoints;
 
@@ -46,24 +44,19 @@ const guessCheck = () => {
 
     guessRange.push(guessRange[guessRange.length - 1] + 1);
     inPlay = true;
+    hint()
   } else {
     inPlay = false;
   }
 
-  hint()
+  form.reset()
   winOrLose(numOfPoints, stageNum, inPlay);
 }
 
-function handleSubmit() {
-  let userInput = document.getElementById("userInput").value;
-  console.log(userInput);
-  document.getElementById("userInput").innerHTML = ''
+const refreshPage = () => {
+  window.location.reload()
 }
 
-form.addEventListener('submit', handleSubmit)
-// function checker(e){
-//     console.log('this makes stuff easier')
-// }
 
-// Make form submission work, then work on start, win and loose displays
-//listen for user guess submiition to trigger guesscheck() with userguess value
+form.addEventListener('submit', guessCheck)
+
