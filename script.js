@@ -26,8 +26,8 @@ function hint() {
 function winOrLose(points, stage, isGameOn) {
   let winDisplay = document.getElementById("winDisplay");
   isGameOn
-    ? (winDisplay.innerHTML = `Correct!, you now have ${points} points, move to stage ${stage}`)
-    : (winDisplay.innerHTML = `Wrong!, Try Again?`);
+    ? (winDisplay.innerHTML = `Correct! You now have ${points} points, move to stage ${stage}`)
+    : (winDisplay.innerHTML = `Wrong! Try Again?`);
 }
 
 const guessCheck = () => {
