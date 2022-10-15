@@ -63,6 +63,7 @@ const guessCheck = () => {
   let userInput = document.getElementById("userInput").value;
   let kIndex = Math.floor(Math.random() * guessRange.length);
   let k = guessRange[kIndex];
+  console.log(userInput, k)
   console.log("k is ", k, "and user guessed ", userInput);
   if (userInput != null && k == Number(userInput)) {
     numOfPoints++;

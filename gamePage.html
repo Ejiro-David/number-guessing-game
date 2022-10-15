@@ -5,24 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
     <title>Play!</title>
 </head>
 
 <body>
-    <div class="game-body" id="game-body">
-        <p>You have <span id="userpoints"></span> Point(s)</p>
-        <p>Stage <span id="userstage"></span></p>
-        <p> Guess the Number?</p>
-        <p id="winDisplay"></p>
-        <form id="form" onsubmit=" return false;">
-            <input type="number" id="userInput">
-            <input type="submit" value="check">
-        </form>
+    <div id="game-body">
+        <div id="game-data">
+            <p>Name <span id="user-name"></span></p>
+            <p>Point(s): <span id="userpoints">x</span></p>
+            <p>Stage: <span id="userstage">x</span></p>
+        </div>
+
+        <p> Guess the number</p>
+        <p id="winDisplay"></p> 
         <p>Hint: The range is <span id="guessrange"></span></p><br>
+        <form id="form" onsubmit="return false;" >
+            <input type="number" id="userInput" required minlength="1">
+            <input type="submit" value="check" onclick="guessCheck()">
+        </form>
+        
         <button id="end-btn" onclick="window.location.href = 'endPage.html'; return false;">End Game</button>
+        <button id="refresh-btn" onclick="window.location.href = 'gamePage.html'; return false;">Refresh Game</button>
+
     </div>
 </body>
-<script src="script.js" type="text/javascript">
+<!-- <script src="script.js" type="text/javascript"> -->
 </script>
 
 </html>
