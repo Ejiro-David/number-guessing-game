@@ -8,9 +8,12 @@ let form = document.getElementById("form");
 let startDisplay = '<button id="start-btn">yolo</button>';
 let start = document.getElementById("start-btn");
 let end = document.getElementById("end-btn");
+let userName = document.getElementById('user-name').value
 
 // to control html body, the conditional rendering of the start button or the game page
 // k = the correct guess, K-index = the position of the correct guess on the array.
+
+
 
 const gameStart = () => {
   inPlay = true;
