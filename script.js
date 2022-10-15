@@ -50,6 +50,8 @@ function hint() {
 function winOrLose(points, stage, isGameOn) {
   let winDisplay = document.getElementById("winDisplay");
   isGameOn
+  //add vanishing +1 
+  //steady display of point and stage
     ? (winDisplay.innerHTML = `Correct! You now have ${points} points, move to stage ${stage}`)
     : (winDisplay.innerHTML = `Wrong! Try Again?`);
 }
