@@ -13,3 +13,9 @@ At a correct guess, the game should award the player a point and move them to st
  - if correct? points and stage should update to plus 1. 
  - guess range should increase by the next consecutive digit.
  - on exit press game should display an "exit page"
+
+
+ //make points recieve data from a single source of truth
+ // perfect start and end game button.
+ // implement refresh
+ // draft styles
