@@ -5,32 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="script.js" type="text/javascript"></script> -->
+    <script src="script.js" type="text/javascript"></script>
     <title>Play!</title>
 </head>
 
 <body>
     <div id="game-body">
+        <h1>Guess the number</h1>
         <div id="game-data">
-            <p>Name <span id="dis-username"></span></p>
-            <p>Point(s): <span id="dis-userpoints">x</span></p>
-            <p>Stage: <span id="dis-userstage">x</span></p>
+            <p>Name <span id="dp-username"></span></p>
+            <p>Point(s): <span id="dp-userpoints">x</span></p>
+            <p>Stage: <span id="dp-userstage">x</span></p>
         </div>
 
-        <p> Guess the number</p>
-        <p id="winDisplay"></p> 
+        <img src="question.png" alt="question-sign">
+
+        <p id="winDisplay"></p>
         <p>Hint: The range is <span id="guessrange"></span></p><br>
-        <form id="form" onsubmit="return false;" >
+        <form id="form" onsubmit="return false;">
             <input type="number" id="userInput" required minlength="1">
-            <input type="submit" value="check" onclick="guessCheck()">
+            <input type="button" value="check" onclick="guessCheck()">
         </form>
-        
-        <button id="end-btn" onclick="window.location.href = 'endPage.html'; return false;">End Game</button>
-        <button id="refresh-btn" onclick="window.location.href = 'gamePage.html'; return false;">Refresh Game</button>
+
+        <button id="refresh-btn" onclick="window.location.href = 'gamePage.html'; return false;">Refresh</button>
+        <button id="end-btn" onclick="window.location.href = 'endPage.html'; return false;">End</button>
 
     </div>
 </body>
-<script src="script.js" type="text/javascript">
+<!-- <script src="script.js" type="text/javascript"> -->
 </script>
 
 </html>

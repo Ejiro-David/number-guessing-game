@@ -12,17 +12,20 @@
     <h1>Number Guessing Game</h1>
     <div class="userdata">
         <h3>Welcome</h3>
-        <!-- //fix bug that let users submit an empy form  -->
         <p>Enter name to play:</p>
-        <form  action="gamePage.html" method="POST">
+        <!-- action="gamePage.html" method="POST" -->
+        <form onsubmit="setNameStore()">
             <input id="userName" type="text" placeholder="name" minlength="4"  required>
-            <input class="btn" type="submit" value="Enter" onclick="getName()">
+            <input class="btn" type="submit" value="Enter">
         </form>
     </div>
 
 
 </body>
 <script src="script.js" type="text/javascript">
+    const setNameStore = () => {
+        console.log('jjj')
+    }
 </script>
 
 </html>
