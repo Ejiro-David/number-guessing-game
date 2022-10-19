@@ -106,4 +106,4 @@ const refreshPage = () => {
   window.location.reload();
 };
 
-form.addEventListener("submit", guessCheck);
+g

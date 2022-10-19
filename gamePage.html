@@ -8,7 +8,7 @@
     <title>Play!</title>
 </head>
 
-<body>
+<body onload="setHint()">
     <div id="game-body">
         <h1>Guess the number</h1>
         <div id="game-data">
@@ -21,9 +21,9 @@
 
         <p id="winDisplay"></p>
         <p>Hint: The range is <span id="guessrange"></span></p><br>
-        <form id="form" onsubmit="return false;">
-            <input type="number" id="userInput" required minlength="1">
-            <input type="button" value="check" onclick="guessCheck()">
+        <form id="form" onsubmit="checkGuess()">
+            <input type="number" id="userInput"  minlength="1" required title="feild cannot be empty">
+            <input type="button" value="check">
         </form>
 
         <button id="refresh-btn" onclick="window.location.href = 'gamePage.html'; return false;">Refresh</button>
