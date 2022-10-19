@@ -19,9 +19,11 @@
 
         <img src="question.png" alt="question-sign">
 
-        <p id="winDisplay"></p>
+        <p id="winOrLose"></p>
         <p>Hint: The range is <span id="guessrange"></span></p><br>
-        <form id="form" onsubmit="checkGuess()">
+        <p id="winDisplay"></p>
+        <form id="guessForm">
+            <!-- add checks to make sure feilds cannot but null -->
             <input type="number" id="userInput"  minlength="1" required title="feild cannot be empty">
             <input type="button" value="check">
         </form>
