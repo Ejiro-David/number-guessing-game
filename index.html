@@ -14,7 +14,7 @@
         <h3>Welcome</h3>
         <p>Enter name to play:</p>
         <!-- action="gamePage.html" method="POST" -->
-        <form onsubmit="setNameStore()">
+        <form onsubmit="setNameStore()"  action="gamePage.html" method="POST" >
             <input id="userName" type="text" placeholder="name" minlength="4"  required>
             <input class="btn" type="submit" value="Enter">
         </form>
@@ -23,9 +23,6 @@
 
 </body>
 <script src="script.js" type="text/javascript">
-    const setNameStore = () => {
-        console.log('jjj')
-    }
 </script>
 
 </html>
