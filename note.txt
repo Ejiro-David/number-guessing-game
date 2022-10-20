@@ -15,6 +15,6 @@ At a correct guess, the game should award the player a point and move them to st
  - on exit press game should display an "exit page"
 
 Bugs Hunting
-- winDisplay only shpws after user checks a guess, then disappears
+- winDisplay then disappears with CSS
 - update point and stage  number
 - uspdate winDisplay

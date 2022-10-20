@@ -14,7 +14,7 @@
         <div id="game-data">
             <p>Name <span id="dp-username"></span></p>
             <p>Point(s): <span id="dp-userpoints">0</span></p>
-            <p>Stage: <span id="dp-userstage">0</span></p>
+            <p>Stage: <span id="dp-userstage">1</span></p>
         </div>
 
         <img src="question.png" alt="question-sign">
@@ -25,7 +25,7 @@
         <form id="guessForm">
             <!-- add checks to make sure feilds cannot but null -->
             <input type="number" id="userInput"  minlength="1" required title="feild cannot be empty">
-            <input type="button" value="check">
+            <input id="guessButton" type="button" value="check">
         </form>
 
         <button id="refresh-btn" onclick="window.location.href = 'gamePage.html'; return false;">Refresh</button>
