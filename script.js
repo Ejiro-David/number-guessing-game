@@ -33,6 +33,7 @@ const guessCheck = () => {
     inPlay = true;
     document.getElementById("winOrLose").innerHTML = "Correct! To the next";
     setHint();
+
   } else {
     inPlay = false;
     document.getElementById("winOrLose").innerHTML = "Wrong. Try again.";
@@ -41,6 +42,8 @@ const guessCheck = () => {
   document.getElementById("guessForm").reset();
 };
 
-// userPoints = sessionStorage.getItem()
+
+
+console.log(sessionStorage.getItem('userpoints'))
 
 document.getElementById("guessButton").addEventListener("click", guessCheck);
