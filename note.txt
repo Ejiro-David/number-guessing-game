@@ -18,3 +18,4 @@ Bugs Hunting
 - winDisplay then disappears with CSS
 - update point and stage  number
 - uspdate winDisplay
+- auto focus on the guess input field.

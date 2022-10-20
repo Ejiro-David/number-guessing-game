@@ -37,7 +37,10 @@ const guessCheck = () => {
     inPlay = false;
     document.getElementById("winOrLose").innerHTML = "Wrong. Try again.";
   }
+  sessionStorage.setItem("userpoints", document.getElementById("dp-userpoints").innerHTML);
   document.getElementById("guessForm").reset();
 };
+
+// userPoints = sessionStorage.getItem()
 
 document.getElementById("guessButton").addEventListener("click", guessCheck);
